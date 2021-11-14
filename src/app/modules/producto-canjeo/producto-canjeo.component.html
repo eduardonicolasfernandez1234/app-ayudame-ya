@@ -1,0 +1,17 @@
+<div class="content">
+    <div class="card-producto-canjeo">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div class="" fxLayout="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let producto of listaProductoCanjeo">
+                <mat-card class="mat-elevation-z4 content-box">
+                    <mat-card-title>
+                        <h3>{{producto.nombre}}</h3>
+                    </mat-card-title>
+                    <mat-card-content>
+                        <h5>{{producto.descripcion}}</h5>
+                        <h6>{{producto.puntos_necesarios}}</h6>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

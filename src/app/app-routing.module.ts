@@ -5,9 +5,11 @@ import { RegistroComponent } from './core/auth/registro/registro.component';
 import { CanjeoComponent } from './modules/canjeo/canjeo.component';
 import { HomeComponent } from './modules/home/home.component';
 import { JuegosComponent } from './modules/juegos/juegos.component';
+import { RuletaComponent } from './modules/juegos/ruleta/ruleta.component';
 import { LogrosComponent } from './modules/logros/logros.component';
 import { PerfilComponent } from './modules/perfil/perfil.component';
 import { PremiosComponent } from './modules/premios/premios.component';
+import { ProductoCanjeoComponent } from './modules/producto-canjeo/producto-canjeo.component';
 
 const routes: Routes = [
   {
@@ -33,12 +35,22 @@ const routes: Routes = [
   {
     path: 'premios',
     component: PremiosComponent,
-  },{
+  },
+  {
     path: 'juegos',
     component: JuegosComponent,
-  },{
+  },
+  {
+    path: 'ruleta',
+    component: RuletaComponent,
+  },
+  {
     path: 'canjeo',
     component: CanjeoComponent,
+  },
+  {
+    path: 'producto-canjeo/:categoria',
+    component: ProductoCanjeoComponent,
   }
 ];
 

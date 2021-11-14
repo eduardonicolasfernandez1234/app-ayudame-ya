@@ -1,1 +1,17 @@
-<p>logros works!</p>
+<div class="content">
+  <div class="card-logro">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+      <div class="" fxLayout="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let logro of listaLogro">
+        <mat-card class="mat-elevation-z4 content-box">
+          <mat-card-title>
+            <h3>{{logro.nombre}}</h3>
+          </mat-card-title>
+          <mat-card-content>
+            <h5>{{logro.descripcion}}</h5>
+            <h6>{{logro.puntos_recompensa}}</h6>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,201 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    font-size: 16px;
+    height: 100%;
+    background-color: #fff;
+    color: #222;
+    height: 100vh;
+}
+
+.mat-drawer-content {
+    display: initial!important;
+}
+
+.custom-modalbox {
+    mat-dialog-container {
+        background-color: transparent;
+        border-radius: 10px;
+    }
+}
+
+.cdk-overlay-backdrop{
+    background-color: transparent;
+}
+
+.content{
+    height: 100%;
+}
+
+.theme-options{
+    margin: 0 auto;
+    text-align: right;
+    padding: 20px 20px 20px 0px;
+    div {
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        margin: 2px 10px;
+        border: 1px solid #fff;
+        display: inline-block;
+        opacity: 0.5;
+        &.active{
+            opacity: 1;
+            background-color: red;
+        }
+    }
+
+    #theme-white{
+        background-color: #eee;
+    }
+    #theme-blue{
+        background-color: #1e41c1;
+    }
+    #theme-orange{
+        background-color: #b64b1e;
+    }
+    #theme-purple{
+        background-color: #7852ae;
+    }
+    #theme-green{
+        background-color: #5faf3b;
+    }
+    #theme-black{
+        background-color: #000;
+    }
+}
+
+.content-box{
+    margin: 0 auto;
+    background-color: #eee;
+    color: #222;
+    border-radius: 8px;
+    padding: 30px 30px 40px 30px;
+    max-width: 800px;
+    h3 {
+        line-height: 1.2;
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    h5 {
+        line-height: 1.5;
+        margin: 0 0 20px 0;
+        font-size: 12px;
+    }
+
+    h6 {
+        line-height: 1.7;
+        margin: 0 0 20px 0;
+        font-size: 12px;
+    }
+}
+
+// Theming
+.theme-blue {
+    background-color: #bec7e7;
+    .content-box {
+        background-color: #d8def4;
+        h3, h5, h6 {
+            color: #1e41c1;
+        }
+        p {
+            color: #000;
+        }
+    }
+}
+
+.theme-orange {
+    background-color: #f4c9b7;
+    .content-box {
+        background-color: #f4dfd6;
+        h3, h5, h6 {
+            color: #b64b1e;
+        }
+        p {
+            color: #000;
+        }
+    }
+}
+
+.theme-purple {
+    background-color: #d0b7f4;
+    color: #000;
+    .content-box {
+        background-color: #ecdfff;
+        h3, h5, h6 {
+            color: #7852ae;
+        }
+        p {
+            color: #000;
+        }
+    }
+}
+
+.theme-green {
+    background-color: #c3e3c1;
+    color: #000;
+    .content-box {
+        background-color: #e2f6e1;
+        h3, h5, h6 {
+            color: #5faf3b;
+        }
+        p {
+            color: #000;
+        }
+    }
+}
+
+.theme-black {
+    background-color: #5c5c5c;
+    color: #000;
+    .content-box {
+        background-color: #333;
+        h3, h5, h6 {
+            color: #ffffff;
+        }
+        p {
+            color: #ccc;
+        }
+    }
+}
+
+.theme-black {
+    background-color: #5c5c5c;
+    color: #000;
+    .content-box {
+        background-color: #333;
+        h3, h5, h6 {
+            color: #ffffff;
+        }
+        p {
+            color: #ccc;
+        }
+    }
+}
+
+.content .card-logro mat-card{
+    width: 200px;
+    margin: 16px;
+}
+
+.content .card-premio mat-card{
+    width: 200px;
+    margin: 16px;
+}
+
+.content .card-canjeo mat-card{
+    width: 200px;
+    margin: 16px;
+}
+
+.content .card-producto-canjeo mat-card{
+    width: 200px;
+    margin: 16px;
+}

@@ -1,0 +1,23 @@
+.contador{
+    background-color: rgb(40, 103, 122);
+    color: white;
+    width: 50px;
+    height: 30px;
+    margin: 0px;
+    border-radius: 7px;
+    text-align: center;
+    padding: 5px;
+}
+
+.card-pregunta{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.card-opcion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    cursor: pointer;
+}

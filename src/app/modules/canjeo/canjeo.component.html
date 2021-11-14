@@ -1,1 +1,18 @@
-<p>canjeo works!</p>
+<div class="content">
+    <div class="card-canjeo">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div class="" fxLayout="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let canjeo of listaCanjeo"
+                [routerLink]="['/producto-canjeo/', canjeo.categoria]">
+                <mat-card class="mat-elevation-z4 content-box" >
+                    <mat-card-title>
+                        <h3>{{canjeo.nombre}}</h3>
+                    </mat-card-title>
+                    <mat-card-content>
+                        <h5>{{canjeo.categoria}}</h5>
+                        <h6>{{canjeo.puntos_base}}</h6>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

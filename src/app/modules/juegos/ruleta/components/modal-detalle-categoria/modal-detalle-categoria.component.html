@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>{{data.nombre}}</h2>
+<mat-dialog-content class="mat-typography">
+    <img *ngIf="data.imagen_modojuego != null" [src]="data.imagen_modojuego" alt="">
+    <h3>Descripción</h3>
+    <p>{{data.descripcion}}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <!-- <button mat-button mat-dialog-close>Cerrar</button> -->
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Entendido</button>
+</mat-dialog-actions>

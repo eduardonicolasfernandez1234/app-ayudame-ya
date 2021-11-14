@@ -1,0 +1,35 @@
+<div class="ruleta">
+    <h1 *ngIf="juego">{{juego.nombre}}</h1>
+    <div class="ruleta-contenedor">
+
+        <div class="titulo-juego-ruleta">
+            <h1>EMPIEZA A PROBAR SUERTE</h1>
+            <div class="juego-ruleta">
+                <ngx-wheel *ngIf="this.listaCategorias.length > 0" #wheel width='500' height='500' spinDuration='8'
+                    [items]='items' [innerRadius]='50' [spinAmount]='10' [textOrientation]='textOrientation'
+                    [textAlignment]='textAlignment' pointerStrokeColor='black' pointerFillColor='gold'
+                    [idToLandOn]='idToLandOn' (onSpinStart)='before()' (onSpinComplete)='after()'></ngx-wheel>
+            </div>
+
+        </div>
+
+        <div class="titulo-contenido-ruleta">
+            <h1>NOTAS PENDIENTES</h1>
+            <div class="contenido-ruleta">
+                <mat-card *ngFor="let categoria of listaCategorias" [style]="'background-color: ' + categoria.color"
+                    [ngClass]="{'black': categoria.color == '#ffffff'}">
+                    <mat-card-content (click)="irCategoria(categoria)">
+                        <p>{{categoria.nombre}}</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <img src="../../../assets/images/imagen.png" alt=""> -->
+    <!-- <div class="reset">
+      <button (click)="reset()">Reset</button>
+    </div> -->
+</div>

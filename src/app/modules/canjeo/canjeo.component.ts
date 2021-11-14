@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CanjeoService } from 'src/app/core/services/canjeo/canjeo.service';
+import { Canjeo } from 'src/app/shared/models/canjeo';
 
 @Component({
   selector: 'app-canjeo',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CanjeoComponent implements OnInit {
 
-  constructor() { }
+  listaCanjeo: Canjeo[] = [];
+
+  constructor(
+    private canjeoService: CanjeoService
+  ) { }
 
   ngOnInit(): void {
+    this.canjeoService.listadoCanjeo().subscribe((canjeo) => {
+      this.listaCanjeo = canjeo;
+      console.log(this.listaCanjeo);
+    },error => {
+      console.log(error);
+    })
   }
 
 }

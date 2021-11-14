@@ -1,9 +1,21 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
     <mat-toolbar color="primary" class="example-toolbar">
-        <button mat-icon-button (click)="snav.toggle()">
-            <mat-icon>menu</mat-icon>
-        </button>
-        <h1 class="example-app-name">Ayudame-Ya!!!</h1>
+        <div class="toolbar-menu">
+            <button mat-icon-button (click)="snav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <h1 class="example-app-name">Ayudame-Ya!!!</h1>
+        </div>
+        
+
+        <div class="menu-aplicacion">
+            <div *ngIf="usuario">
+                <p>{{usuario.username}} <mat-icon> person_pin</mat-icon> </p>
+                <p>{{usuario.puntaje_total}} Pts total.</p>
+                <p>{{usuario.puntaje_diario}} Pts diario.</p>
+                <!-- <p>{{usuario.username}}</p> -->
+            </div>
+        </div>
     </mat-toolbar>
 
     <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
@@ -18,7 +30,31 @@
         </mat-sidenav>
 
         <mat-sidenav-content>
-            <router-outlet></router-outlet>
+            <div class="content {{storedTheme}}" role="main">
+                <div class="theme-options">
+                    <div id="theme-white" 
+                        [ngClass]="{'active': storedTheme === 'theme-white'}"                    
+                        (click)="setTheme('theme-white')"></div>
+                    <div id="theme-blue" 
+                        [ngClass]="{'active': storedTheme === 'theme-blue'}"
+                        (click)="setTheme('theme-blue')"></div>
+                    <div id="theme-orange" 
+                        [ngClass]="{'active': storedTheme === 'theme-orange'}"
+                        (click)="setTheme('theme-orange')"></div>
+                    <div id="theme-purple" 
+                        [ngClass]="{'active': storedTheme === 'theme-purple'}"
+                        (click)="setTheme('theme-purple')"></div>
+                    <div id="theme-green" 
+                        [ngClass]="{'active': storedTheme === 'theme-green'}"
+                        (click)="setTheme('theme-green')"></div>
+                    <div id="theme-black" 
+                        [ngClass]="{'active': storedTheme === 'theme-black'}"
+                        (click)="setTheme('theme-black')"></div>
+                </div>
+                <router-outlet></router-outlet>
+            </div>
+
+            
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

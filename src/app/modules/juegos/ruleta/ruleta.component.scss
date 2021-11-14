@@ -1,0 +1,66 @@
+.ruleta{
+    text-align: center;
+    // background-image: url('../../../assets/images/naranja.jpg');
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background: #e2e3c080;
+    height: 100%;
+}
+
+.ruleta h1{
+    padding-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.ruleta-contenedor{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.titulo-juego-ruleta{
+    text-align: center;
+    width: 50%;
+}
+
+.titulo-juego-ruleta h1{
+    font-size: 18px;
+}
+
+.juego-ruleta{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.titulo-contenido-ruleta{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.titulo-contenido-ruleta h1{
+    font-size: 18px;
+}
+
+.contenido-ruleta{
+    text-align: center;
+}
+
+.contenido-ruleta mat-card{
+    margin: 10px auto;
+    width: 60%;
+    color: white;
+    text-align: center;
+}
+
+.contenido-ruleta p{
+    font-size: 18px;
+}
+
+.black{
+    color: black!important;
+}

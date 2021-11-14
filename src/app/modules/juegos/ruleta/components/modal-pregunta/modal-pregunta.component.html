@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-header>
+        <h1 *ngIf="data.pregunta">{{data.pregunta.pregunta}}</h1>
+        <h1 *ngIf="data.pregunta == null">Felicidades encontraste un BUG, ganas automaticamente 1250 pts!!! :D</h1>
+        <h1 class="contador" *ngIf="contador > 0 && contador <= tiempoLimite">{{contador}}</h1>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-progress-bar mode="determinate" [value]="valorBar"></mat-progress-bar>
+        <div class="card-pregunta">
+            <h2 mat-dialog-title>¡Escoje una opción!</h2>
+            <div>
+                <mat-card class="card-opcion" *ngFor="let opcion of data.opciones" (click)="seleccionarOpcion(opcion)">
+                    <mat-card-content>
+                        {{opcion.opcion}}
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+
+<!-- <mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions> -->

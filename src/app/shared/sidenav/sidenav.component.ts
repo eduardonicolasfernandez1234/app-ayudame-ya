@@ -1,5 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout'
+import { UsuarioService } from 'src/app/core/services/usuario/usuario.service';
+import { Usuario } from '../models/usuario';
 
 @Component({
   selector: 'app-sidenav',
@@ -9,8 +11,6 @@ import { MediaMatcher } from '@angular/cdk/layout'
 export class SidenavComponent implements OnInit, OnDestroy {
 
   mobileQuery: MediaQueryList;
-
-  // fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
   fillerNav = [
     {name:"Home", route:"", icon:"home"},
     {name:"Juegos", route:"juegos", icon:"sports_esports"},
@@ -23,9 +23,16 @@ export class SidenavComponent implements OnInit, OnDestroy {
     {name:"Contacto", route:"", icon:"perm_contact_calendar"},
   ]
 
+  usuario!: Usuario;
+  storedTheme!: string;
+
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(
+    changeDetectorRef: ChangeDetectorRef, 
+    media: MediaMatcher,
+    private usuarioService: UsuarioService
+  ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -39,6 +46,13 @@ export class SidenavComponent implements OnInit, OnDestroy {
   shouldRun = true;
 
   ngOnInit(): void {
+    this.storedTheme = localStorage.getItem('theme-color')!;
+    this.usuario = this.usuarioService.obtenerUsuario();
+  }
+
+  setTheme(theme: any){
+    localStorage.setItem('theme-color', theme);
+    this.storedTheme = localStorage.getItem('theme-color')!;
   }
 
 }

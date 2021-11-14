@@ -1,1 +1,17 @@
-<p>premios works!</p>
+<div class="content">
+    <div class="card-premio">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div class="" fxLayout="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let premio of listaPremio">
+                <mat-card class="mat-elevation-z4 content-box">
+                    <mat-card-title>
+                        <h3>{{premio.nombre}}</h3>
+                    </mat-card-title>
+                    <mat-card-content>
+                        <h5>{{premio.descripcion}}</h5>
+                        <h6>{{premio.puntos_requeridos}}</h6>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

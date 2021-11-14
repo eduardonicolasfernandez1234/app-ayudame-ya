@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="contenedor-login">
+    <mat-card class="example-card">
+        <mat-card-title>
+            <p>INICIO DE SESIÓN</p>
+        </mat-card-title>
+        <mat-card-content>
+            <p>
+                <mat-form-field appearance="legacy">
+                  <mat-label>Ingrese su nombre de usuario o correo electronico</mat-label>
+                  <input [(ngModel)]="usuario" matInput placeholder="Usuario">
+                  <mat-icon matSuffix>alternate_email</mat-icon>
+                  <mat-hint>Ejm. test@test.com o test1234</mat-hint>
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field appearance="legacy">
+                  <mat-label>Ingrese su contrañsea</mat-label>
+                  <input [(ngModel)]="pass" type="password" matInput placeholder="Password">
+                  <mat-icon matSuffix>lock</mat-icon>
+                  <mat-hint>Ejm. Password09az</mat-hint>
+                </mat-form-field>
+              </p>
+              <button mat-raised-button color="warning" (click)="registrarse()">Registrarse</button>
+              <button mat-raised-button color="primary" (click)="iniciar()">Iniciar Sesiòn</button>
+        </mat-card-content>
+    </mat-card>
+</div>

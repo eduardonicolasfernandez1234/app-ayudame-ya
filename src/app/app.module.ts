@@ -16,6 +16,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+// Ngx-wheel
+import { NgxWheelModule } from 'ngx-wheel';
 
 // Pages
 import { HomeComponent } from './modules/home/home.component';
@@ -28,6 +36,12 @@ import { JuegosComponent } from './modules/juegos/juegos.component';
 import { LoginComponent } from './core/auth/login/login.component';
 import { RegistroComponent } from './core/auth/registro/registro.component';
 import { CanjeoComponent } from './modules/canjeo/canjeo.component';
+import { RuletaComponent } from './modules/juegos/ruleta/ruleta.component';
+import { ModalPreguntaComponent } from './modules/juegos/ruleta/components/modal-pregunta/modal-pregunta.component';
+import { ModalResultadoComponent } from './modules/juegos/ruleta/components/modal-resultado/modal-resultado.component';
+import { ModalDetalleCategoriaComponent } from './modules/juegos/ruleta/components/modal-detalle-categoria/modal-detalle-categoria.component';
+import { FormsModule } from '@angular/forms';
+import { ProductoCanjeoComponent } from './modules/producto-canjeo/producto-canjeo.component';
 
 
 @NgModule({
@@ -42,7 +56,12 @@ import { CanjeoComponent } from './modules/canjeo/canjeo.component';
     JuegosComponent,
     LoginComponent,
     RegistroComponent,
-    CanjeoComponent
+    CanjeoComponent,
+    RuletaComponent,
+    ModalPreguntaComponent,
+    ModalResultadoComponent,
+    ModalDetalleCategoriaComponent,
+    ProductoCanjeoComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +76,14 @@ import { CanjeoComponent } from './modules/canjeo/canjeo.component';
     MatListModule,
     FlexLayoutModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxWheelModule,
+    MatDialogModule,
+    MatProgressBarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -37,3 +37,21 @@ mat-sidenav{
 .icono{
     margin-right: 10px;
 }
+
+mat-toolbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.toolbar-menu{
+    display: flex;
+}
+
+.menu-aplicacion div{
+    display: flex;
+}
+
+.menu-aplicacion div p{
+    margin: 0px 10px;
+}
