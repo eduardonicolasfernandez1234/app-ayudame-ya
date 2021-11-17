@@ -42,6 +42,11 @@ import { ModalResultadoComponent } from './modules/juegos/ruleta/components/moda
 import { ModalDetalleCategoriaComponent } from './modules/juegos/ruleta/components/modal-detalle-categoria/modal-detalle-categoria.component';
 import { FormsModule } from '@angular/forms';
 import { ProductoCanjeoComponent } from './modules/producto-canjeo/producto-canjeo.component';
+import { PuzzleComponent } from './modules/juegos/puzzle/puzzle.component';
+import { CategoriaComponent } from './modules/juegos/puzzle/categoria/categoria.component';
+import { ImageComponent } from './modules/juegos/puzzle/image/image.component';
+import { StatsComponent } from './modules/juegos/puzzle/stats/stats.component';
+import { BoardComponent } from './modules/juegos/puzzle/board/board.component';
 
 
 @NgModule({
@@ -61,7 +66,12 @@ import { ProductoCanjeoComponent } from './modules/producto-canjeo/producto-canj
     ModalPreguntaComponent,
     ModalResultadoComponent,
     ModalDetalleCategoriaComponent,
-    ProductoCanjeoComponent
+    ProductoCanjeoComponent,
+    PuzzleComponent,
+    CategoriaComponent,
+    ImageComponent,
+    StatsComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,

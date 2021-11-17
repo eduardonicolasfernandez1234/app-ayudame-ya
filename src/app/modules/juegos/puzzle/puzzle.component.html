@@ -1,0 +1,63 @@
+<div class="app">
+    <!-- <header>
+        <div class="flags">
+            <img *ngFor="let language of languages;"
+                src='https://firebasestorage.googleapis.com/v0/b/puzzle-ebd10.appspot.com/o/images%2Fflags%2F{{language.flag}}.jpg?alt=media'
+                (click)="setLanguage(language.id)" alt={{language.flag}} />
+        </div>
+    </header> -->
+    <!-- Navigation -->
+
+    <!-- <nav>
+        <input type="checkbox" id="menu" />
+        <label class="menu-label" for="menu">
+            <div id="burger-container">
+                <div id="burger">
+                    <span>&nbsp;</span>
+                    <span>&nbsp;</span>
+                    <span>&nbsp;</span>
+                </div>
+            </div>
+        </label>
+        <ul>
+            <li>
+                <a [routerLink]="['/']" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact:true}">{{puzzle}}</a>
+            </li>
+            <li>
+                <a [routerLink]="['/history']" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact:true}">{{history}}</a>
+            </li>
+            <li>
+                <a [routerLink]="['/repository']" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact:true}">{{repository}}</a>
+            </li>
+            <li>
+                <a [routerLink]="['/about']" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact:true}">{{about}}</a>
+            </li>
+            <li>
+                <a [routerLink]="['/contact']" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact:true}">{{contact}}</a>
+            </li>
+        </ul>
+    </nav> -->
+
+
+    <div id="game" class="game">
+
+        <div class="info">{{goal}}</div>
+
+        <app-categoria (categoryChange)="onCategoryChange($event)"></app-categoria>
+
+        <app-image [folder]="folder" [image]="image" (imageChange)="onImageChange($event)"></app-image>
+
+        <app-stats [time]="time" [moves]="moves" [fails]="fails"></app-stats>
+
+        <app-board *ngIf="folder" [folder]="folder" [image]="image" (statsChange)="onStatsChange($event)"></app-board>
+
+        <div *ngIf="over" class="info">
+            <span>{{end}}</span>
+        </div>
+    </div>
+</div>

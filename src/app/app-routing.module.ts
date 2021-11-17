@@ -5,6 +5,7 @@ import { RegistroComponent } from './core/auth/registro/registro.component';
 import { CanjeoComponent } from './modules/canjeo/canjeo.component';
 import { HomeComponent } from './modules/home/home.component';
 import { JuegosComponent } from './modules/juegos/juegos.component';
+import { PuzzleComponent } from './modules/juegos/puzzle/puzzle.component';
 import { RuletaComponent } from './modules/juegos/ruleta/ruleta.component';
 import { LogrosComponent } from './modules/logros/logros.component';
 import { PerfilComponent } from './modules/perfil/perfil.component';
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'ruleta',
     component: RuletaComponent,
+  },
+  {
+    path: 'puzzle',
+    component: PuzzleComponent,
   },
   {
     path: 'canjeo',
