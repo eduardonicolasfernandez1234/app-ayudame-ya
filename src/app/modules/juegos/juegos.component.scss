@@ -10,11 +10,22 @@
 }
 
 .example-header-image {
-    background-image: url("https://r9y9b5q6.rocketcdn.me/wp-content/uploads/2020/02/ruleta-ruletilla-761x1024.jpg");
+    background-image: url("https://previews.123rf.com/images/grgroup/grgroup1612/grgroup161204220/67368921-icono-de-mando-de-juegos-tecnolog%C3%ADa-de-juegos-de-juego-del-ocio-de-los-videojuegos-y-el-tema-de-entr.jpg");
     background-size: cover;
 }
 
 .grupo-boton, .grupo-boton-favorite{
     display: flex;
     justify-content: space-around;
+}
+
+.imagen-juego-card {
+    display: flex;
+    margin: auto;
+}
+
+.imagen-juego-card {
+    display: flex;
+    padding: 20px;
+    width: 60%;
 }

@@ -10,7 +10,9 @@
           <mat-card-title>{{juego.nombre}}</mat-card-title>
           <mat-card-subtitle>{{juego.codigo}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image height="500px" src="https://r9y9b5q6.rocketcdn.me/wp-content/uploads/2020/02/ruleta-ruletilla-761x1024.jpg" alt="Photo of a Shiba Inu">
+        <div class="imagen-juego-card">
+          <img mat-card-image [src]="juego.imagen">
+        </div>
         <mat-card-content>
           <p>
             {{juego.descripcion}}
@@ -30,7 +32,7 @@
               </button>
             </div>
             <div>
-              <button mat-button [routerLink]="['/ruleta']">
+              <button mat-button [routerLink]="[juego.enlace_juego]">
                 <mat-icon>play_arrow</mat-icon>
                 JUGAR
               </button>

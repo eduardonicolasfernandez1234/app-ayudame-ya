@@ -46,15 +46,15 @@
 
     <div id="game" class="game">
 
-        <div class="info">{{goal}}</div>
+        <!-- <div class="info">{{goal}}</div> -->
 
         <app-categoria (categoryChange)="onCategoryChange($event)"></app-categoria>
 
-        <app-image [folder]="folder" [image]="image" (imageChange)="onImageChange($event)"></app-image>
+        <app-image *ngIf="imagen" [folder]="folder" [image]="image" [imagen]="imagen" (imageChange)="onImageChange($event)"></app-image>
 
         <app-stats [time]="time" [moves]="moves" [fails]="fails"></app-stats>
 
-        <app-board *ngIf="folder" [folder]="folder" [image]="image" (statsChange)="onStatsChange($event)"></app-board>
+        <app-board *ngIf="imagen" [folder]="folder" [image]="image" [imagen]="imagen" (statsChange)="onStatsChange($event)"></app-board>
 
         <div *ngIf="over" class="info">
             <span>{{end}}</span>

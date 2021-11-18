@@ -20,8 +20,13 @@ export class CategoriaPuzzleService {
     return this.http.get<CategoriaPuzzle[]>(url);
   }
 
-  obtenerImagenesPorCategoria(){
+  obtenerImagenesPuzzle(){
     const url = `${environment.apiBase}juego/imagen-puzzle/`;
+    return this.http.get<ImagenPuzzle[]>(url);
+  }
+
+  obtenerImagenesPorCategoria(categoriaId: number){
+    const url = `${environment.apiBase}juego/categoria-puzzle/${categoriaId}/imagenes/`;
     return this.http.get<ImagenPuzzle[]>(url);
   }
 

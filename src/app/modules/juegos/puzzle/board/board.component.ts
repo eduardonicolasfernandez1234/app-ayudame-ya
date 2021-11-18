@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CategoriaPuzzleService } from 'src/app/core/services/puzzle/categoria-puzzle.service';
 import { Piece } from 'src/app/shared/models/puzzle/game';
-import { SubImagenPuzzle } from 'src/app/shared/models/puzzle/imagenes_puzzle';
+import { ImagenPuzzle, SubImagenPuzzle } from 'src/app/shared/models/puzzle/imagenes_puzzle';
 
 @Component({
   selector: 'app-board',
@@ -20,6 +20,7 @@ export class BoardComponent implements OnInit {
 
   @Input() folder!: string;
   @Input() image!: number;
+  @Input() imagen!: ImagenPuzzle;
   @Output() statsChange = new EventEmitter();
 
   // Implementacion
@@ -64,10 +65,10 @@ export class BoardComponent implements OnInit {
     let random: number;
     let visited: Array<number> = [];
     let path: string = '';
-    console.log(this.numberOfPieces);
-    this.categoriaPuzzleService.obtenerSubImagenesPorImagenPuzzle(this.image+1).subscribe((imagenes: any) => {
+    this.listadoSubimagenPuzzle = [];
+    this.pieces = [];
+    this.categoriaPuzzleService.obtenerSubImagenesPorImagenPuzzle(this.imagen.id).subscribe((imagenes: any) => {
       this.listadoSubimagenPuzzle = imagenes;
-      console.log(this.listadoSubimagenPuzzle);
       for (let i = 0; i < this.numberOfPieces; i++) {
         random = Math.floor(Math.random() * this.numberOfPieces);
         while (visited.indexOf(random) !== -1) {
@@ -77,7 +78,6 @@ export class BoardComponent implements OnInit {
         path = `url(http://localhost:8000${this.listadoSubimagenPuzzle[random].imagen})`;
         pieces[i] = { index: i, id: random, misplaced: true, path };
       }
-      console.log(pieces);
       this.pieces = pieces;
     })
 

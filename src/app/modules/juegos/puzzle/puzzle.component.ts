@@ -3,6 +3,7 @@ import { CategoriaPuzzleService } from 'src/app/core/services/puzzle/categoria-p
 import { DictionaryService } from 'src/app/core/services/puzzle/dictionary.service';
 import { JuegoPuzzleService } from 'src/app/core/services/puzzle/juego-puzzle.service';
 import { CategoriaPuzzle } from 'src/app/shared/models/puzzle/categoria_puzzle';
+import { ImagenPuzzle } from 'src/app/shared/models/puzzle/imagenes_puzzle';
 
 @Component({
   selector: 'app-puzzle',
@@ -20,6 +21,7 @@ export class PuzzleComponent implements OnInit, OnDestroy {
   private seconds: number = 0;
   folder: string = "";
   image: number = 0;
+  imagen!: ImagenPuzzle | null;
   over: boolean = false;
   time: string = '';
   moves: number = 0;
@@ -64,7 +66,7 @@ export class PuzzleComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 
   setLanguage(lang: any): void {
@@ -99,9 +101,16 @@ export class PuzzleComponent implements OnInit, OnDestroy {
    this.categoryId = category.categoryId;
    this.folder = category.folder;
    this.reset();
-   this.categoriaPuzzleService.obtenerImagenesPorCategoria().subscribe((imagenes: any) => {
-    this.image = Math.floor(Math.random() * imagenes.length);
+   this.imagen = null;
+   this.categoriaPuzzleService.obtenerImagenesPorCategoria(this.categoryId).subscribe((imagenes: any) => {
+    let pos = Math.floor(Math.random() * imagenes.length);
+    this.image = pos;
+    this.imagen = imagenes[pos];
+    console.log(imagenes);
+    console.log(this.imagen);
     console.log('CATEGORY CHANGE ', this.image);
+   }, error => {
+     console.log(error);
    })
    // this.image = Math.floor(Math.random() * this.imagesPerCategory);
   }

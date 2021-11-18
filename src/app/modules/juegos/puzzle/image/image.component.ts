@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { DictionaryService } from 'src/app/core/services/puzzle/dictionary.service';
+import { ImagenPuzzle } from 'src/app/shared/models/puzzle/imagenes_puzzle';
 
 @Component({
   selector: 'app-image',
@@ -12,6 +13,7 @@ export class ImageComponent implements OnInit {
   private subscription: any;
   @Input() folder!: string;
   @Input() image!: number;
+  @Input() imagen!: ImagenPuzzle;
   @Output() imageChange = new EventEmitter();
   path: string = '';
   pathMobile: string = '';
@@ -22,13 +24,13 @@ export class ImageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.subscription = this.dictionary.getTranslations().subscribe((data: any) => {
-      this.imageText = data['IMAGE'];
-    });     
+    // this.subscription = this.dictionary.getTranslations().subscribe((data: any) => {
+    //   this.imageText = data['IMAGE'];
+    // });     
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -39,7 +41,6 @@ export class ImageComponent implements OnInit {
   
   private setPath(folder: string): void {
     this.path = `https://firebasestorage.googleapis.com/v0/b/puzzle-ebd10.appspot.com/o/images%2F${folder}%2F${this.image}.jpg?alt=media`;
-
     this.pathMobile = `https://firebasestorage.googleapis.com/v0/b/puzzle-ebd10.appspot.com/o/images%2F${folder}%2Fmobile%2F${this.image}.jpg?alt=media`;
   }
 

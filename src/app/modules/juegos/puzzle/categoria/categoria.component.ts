@@ -43,8 +43,11 @@ export class CategoriaComponent implements OnInit {
     });*/
     this.categoryService.obtenerCategoriaPuzzle().subscribe((categoria: any) => {
       this.listadoCategorias = categoria;
+      console.log(this.listadoCategorias);
       let pos = Math.floor(Math.random() * this.listadoCategorias.length);
       this.categoryId = this.listadoCategorias[pos].id;
+      this.categoryText = this.listadoCategorias[pos].nombre;
+      
       let data = {
         categoryId: this.categoryId,
         folder: this.listadoCategorias[pos].nombre
@@ -55,9 +58,17 @@ export class CategoriaComponent implements OnInit {
     })
   }
 
+  enviarCategoria(categoria: CategoriaPuzzle){
+    let data = {
+      categoryId: categoria.id,
+      folder: categoria.nombre
+    }
+    this.emitCategory(data);
+  }
+
   ngOnDestroy(): void {
-    this.subscriptionTranslations.unsubscribe()
-    this.subscription.unsubscribe();
+    // this.subscriptionTranslations.unsubscribe()
+    // this.subscription.unsubscribe();
   }
 
   emitCategory(data: any) {

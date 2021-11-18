@@ -1,11 +1,22 @@
-<div class="categories" *ngIf="categoryText">
+<div class="categories">
 
-    <span class="category">{{categoryText}}</span>
+    <div class="menu-categoria">
+        <div class="categoria" *ngFor="let categoria of listadoCategorias">
+            <button mat-raised-button color="primary" (click)="enviarCategoria(categoria)" >{{categoria.nombre}}</button>
+            <!-- <button mat-button [matMenuTriggerFor]="belowMenu">{{categoria.nombre}}</button>
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+                <button mat-menu-item>Item 1</button>
+                <button mat-menu-item>Item 2</button>
+            </mat-menu> -->
+        </div>
+    </div>
 
-    <select (change)="onChange($event)">
+    <!-- <span class="category">{{categoryText}}</span> -->
+
+    <!-- <select (change)="onChange($event)">
         <option *ngFor="let category of categories;" [selected]="category.id === categoryId" value={{category.id}}>
             {{category.name}}
         </option>
-    </select>
+    </select> -->
 
 </div>

@@ -1,12 +1,11 @@
-<div class="image" *ngIf="imageText">
+<div class="image">
 
     <span class="image-text">{{imageText}}</span>
 
-    <img class="image-token desktop" [src]="path" alt="user" />
-    <img class="image-token mobile" [src]="pathMobile" alt="user" />
+    <img class="image-token desktop" style="width: 20%;" [src]="'http://localhost:8000'+imagen.imagen" alt="user" />
+    <!-- <img class="image-token mobile" [src]="'http://localhost:8000'+imagen.imagen" alt="user" /> -->
 
     <img class='refresh'
         src="https://firebasestorage.googleapis.com/v0/b/puzzle-ebd10.appspot.com/o/images%2Frefresh.png?alt=media"
         alt="refresh" (click)="refreshImage()" />
-
 </div>

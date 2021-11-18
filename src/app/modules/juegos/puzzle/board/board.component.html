@@ -1,4 +1,4 @@
-<div class="board" [class.over]="over">
+<div class="board" [class.over]="over" *ngIf="pieces.length > 0">
 
     <div *ngFor="let piece of pieces;" [id]="piece.index" [style.backgroundImage]="piece.path" draggable="true"
         (dragstart)="onDrag($event)" (drop)="onDrop($event)" (dragover)="onDragOver($event)"
